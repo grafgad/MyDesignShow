@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="345dp"
+    android:layout_height="100dp"
+    android:layout_margin="10dp"
+    android:backgroundTint="#3C3C3C"
+    app:cardCornerRadius="20dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="15dp"
+        android:backgroundTint="#4C4C4C"
+        app:cardCornerRadius="30dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/class_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_history" />
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/class_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="25dp"
+        android:text="History"
+        android:textColor="@color/white" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/class_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="55dp"
+        android:drawableLeft="@drawable/ic_baseline_access_time_24"
+        android:drawablePadding="5dp"
+        android:text="8:00 - 8:45"
+        android:textColor="#5A5A5A"
+        app:drawableTint="#5A5A5A" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/class_videochat"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_gravity="end|center"
+        android:backgroundTint="#55C5F1"
+        android:drawableEnd="@drawable/ic_baseline_videocam_24"
+        android:rotation="90"
+        android:text="Open in"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:translationX="43dp" />
+
+</androidx.cardview.widget.CardView>

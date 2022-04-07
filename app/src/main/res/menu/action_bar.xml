@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-
-    <item
-        android:id="@+id/appbar_some"
-        android:title="appbartext"
-        app:showAsAction="always"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
     <item
         android:id="@+id/appbar_search"
         android:icon="@drawable/ic_baseline_search_24"
-        app:showAsAction="always"
-        android:title="appbar_search" />
+        android:iconTint="@color/white"
+        android:title="appbar_search"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_baseline_list_24"
-        app:showAsAction="ifRoom"
-        android:title="settings"/>
+        android:iconTint="@color/white"
+        android:title="settings"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/appbar_student_icon"
         android:icon="@drawable/ic_baseline_tag_faces_24"
-        app:showAsAction="ifRoom"
-        android:title="student"/>
-
+        android:iconTint="@color/white"
+        android:title="student"
+        app:showAsAction="always" />
 
 
 </menu>
