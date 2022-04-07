@@ -37,6 +37,10 @@ android {
 }
 
 dependencies {
+    // TimeLine - for secondScreen
+    implementation 'com.github.vipulasri:timelineview:1.1.5'
+    //coil
+    implementation "io.coil-kt:coil:$coil_version"
     // ViewBinding
     implementation "com.github.kirich1409:viewbindingpropertydelegate:$viewbinding_version"
     // Lifecycle

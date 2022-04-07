@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="220dp"
+    android:layout_height="220dp"
+    android:layout_margin="10dp"
+    android:backgroundTint="#313840"
+    app:cardCornerRadius="30dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="end"
+        android:layout_margin="25dp"
+        android:backgroundTint="#505861"
+        app:cardCornerRadius="20dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/homework_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_literature" />
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/homework_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Literature" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/homework_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:drawableStart="@drawable/ic_baseline_access_time_24"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:drawableTint="@color/white"
+            tools:text="2 days left" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/homework_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:paddingTop="25dp"
+            android:textColor="@color/white"
+            tools:text="Read scenes 1.1 - 1.12 of The Master and Margarita." />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:paddingStart="30dp"
+        android:paddingBottom="20dp"
+        android:src="@drawable/ic_baseline_tag_faces_24"
+        tools:ignore="RtlSymmetry" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:paddingStart="47dp"
+        android:paddingBottom="20dp"
+        android:src="@drawable/ic_baseline_face_24"
+        tools:ignore="RtlSymmetry" />
+
+
+</androidx.cardview.widget.CardView>
