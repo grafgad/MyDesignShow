@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Are you ready foк exams?"
+                android:text="Are you ready for exams?"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"

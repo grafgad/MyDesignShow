@@ -1,15 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="3dp"
+        android:layout_height="0dp"
+        android:background="@color/green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/day_point"
+        app:layout_constraintStart_toStartOf="@id/day_point"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/day_firs_point"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_baseline_circle_24"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/day_point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_circle_24"
+        app:layout_constraintStart_toStartOf="@id/day_firs_point"
+        app:layout_constraintTop_toTopOf="@id/day_firs_point"
+        app:layout_constraintEnd_toEndOf="@id/day_firs_point"
+        app:layout_constraintBottom_toBottomOf="@id/day_firs_point"/>
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/day_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/day_point"
+        app:layout_constraintStart_toEndOf="@id/day_point"
+        app:layout_constraintTop_toTopOf="@id/day_point"
+        tools:text="8:00 - 8:45" />
+
+
+
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="350dp"
+        android:id="@+id/day_class_card"
+        android:layout_width="320dp"
         android:layout_height="100dp"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/gray"
         app:cardCornerRadius="20dp"
-        android:backgroundTint="#353535">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/line"
+        app:layout_constraintTop_toBottomOf="@id/day_point">
+
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="70dp"
@@ -20,7 +73,7 @@
             app:cardCornerRadius="30dp">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/class_image"
+                android:id="@+id/day_class_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -29,7 +82,7 @@
         </androidx.cardview.widget.CardView>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/class_name"
+            android:id="@+id/day_class_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
@@ -38,7 +91,7 @@
             android:textColor="@color/white" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/teacher"
+            android:id="@+id/day_teacher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
@@ -48,18 +101,29 @@
             app:drawableTint="#5A5A5A" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/class_videochat"
-            android:layout_width="60dp"
-            android:layout_height="112dp"
-            android:layout_gravity="end|center_vertical"
+            android:id="@+id/day_class_videochat"
+            android:layout_width="112dp"
+            android:layout_height="70dp"
+            android:layout_gravity="end|center"
             android:backgroundTint="#55C5F1"
             android:drawableBottom="@drawable/ic_baseline_videocam_24"
-            android:drawablePadding="5dp"
+            android:rotation="90"
             android:text="Open in"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:translationX="30dp" />
 
     </com.google.android.material.card.MaterialCardView>
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/day_class_card_background"
+        android:background="@drawable/custom_background"
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        app:layout_constraintBottom_toBottomOf="@+id/day_class_card"
+        app:layout_constraintEnd_toEndOf="@+id/day_class_card"
+        app:layout_constraintStart_toStartOf="@+id/day_class_card"
+        app:layout_constraintTop_toTopOf="@+id/day_class_card" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

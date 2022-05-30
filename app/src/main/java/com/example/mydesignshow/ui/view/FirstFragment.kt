@@ -55,12 +55,11 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
             }
             true
         }
-        someFun()
+        greeting()
     }
 
-    private fun someFun() {
+    private fun greeting() {
         binding.appBar.title = "Hi, Gevorg"
-
     }
 
     companion object {
