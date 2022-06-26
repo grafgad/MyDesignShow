@@ -17,24 +17,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/day_firs_point"
+        android:id="@+id/day_first_point"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/ic_baseline_circle_24"
         android:visibility="visible"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/day_point"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_baseline_circle_24"
-        app:layout_constraintStart_toStartOf="@id/day_firs_point"
-        app:layout_constraintTop_toTopOf="@id/day_firs_point"
-        app:layout_constraintEnd_toEndOf="@id/day_firs_point"
-        app:layout_constraintBottom_toBottomOf="@id/day_firs_point"/>
+        app:layout_constraintBottom_toBottomOf="@id/day_first_point"
+        app:layout_constraintEnd_toEndOf="@id/day_first_point"
+        app:layout_constraintStart_toStartOf="@id/day_first_point"
+        app:layout_constraintTop_toTopOf="@id/day_first_point" />
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/day_point_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_circle"
+        app:layout_constraintBottom_toBottomOf="@id/day_first_point"
+        app:layout_constraintEnd_toEndOf="@id/day_first_point"
+        app:layout_constraintStart_toStartOf="@id/day_first_point"
+        app:layout_constraintTop_toTopOf="@id/day_first_point" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/day_time"
@@ -48,8 +57,6 @@
         tools:text="8:00 - 8:45" />
 
 
-
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/day_class_card"
         android:layout_width="320dp"
@@ -61,7 +68,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/line"
         app:layout_constraintTop_toBottomOf="@id/day_point">
-
 
 
         <androidx.cardview.widget.CardView
@@ -82,7 +88,7 @@
         </androidx.cardview.widget.CardView>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/day_class_name"
+            android:id="@+id/class_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
@@ -116,14 +122,14 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <ImageView
-        android:id="@+id/day_class_card_background"
-        android:background="@drawable/custom_background"
-        android:layout_width="350dp"
-        android:layout_height="130dp"
-        app:layout_constraintBottom_toBottomOf="@+id/day_class_card"
-        app:layout_constraintEnd_toEndOf="@+id/day_class_card"
-        app:layout_constraintStart_toStartOf="@+id/day_class_card"
-        app:layout_constraintTop_toTopOf="@+id/day_class_card" />
+    <!--    <ImageView-->
+    <!--        android:id="@+id/day_class_card_background"-->
+    <!--        android:background="@drawable/custom_background"-->
+    <!--        android:layout_width="350dp"-->
+    <!--        android:layout_height="130dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/day_class_card"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/day_class_card"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/day_class_card"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/day_class_card" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

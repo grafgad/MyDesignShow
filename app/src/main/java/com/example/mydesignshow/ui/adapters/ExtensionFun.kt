@@ -1,4 +1,4 @@
-package com.example.mydesignshow.ui.view
+package com.example.mydesignshow.ui.adapters
 
 import android.content.res.Resources
 import android.util.TypedValue

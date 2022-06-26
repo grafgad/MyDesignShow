@@ -23,7 +23,7 @@ class ClassAdapter : RecyclerView.Adapter<ClassAdapter.ClassViewHolder>() {
 
     class ClassViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val classImage = itemView.findViewById<ImageView>(R.id.class_image)
-        private val className = itemView.findViewById<TextView>(R.id.day_class_name)
+        private val className = itemView.findViewById<TextView>(R.id.class_name)
         private val classTime = itemView.findViewById<TextView>(R.id.class_time)
         private val classVideochat = itemView.findViewById<Button>(R.id.class_videochat)
 

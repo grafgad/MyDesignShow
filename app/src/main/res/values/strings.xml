@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">MyDesignShow</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="menu_home">Home</string>
     <string name="menu_other">Other</string>
@@ -10,4 +9,9 @@
         <item quantity="few">%d days left</item>
         <item quantity="other">%d days left</item>
     </plurals>
+    <string name="today">"Today, "</string>
+    <string name="teacher">Teacher: Mrs Thomas</string>
+    <string name="history">History</string>
+    <string name="background">background</string>
+    <string name="classes">Classes</string>
 </resources>

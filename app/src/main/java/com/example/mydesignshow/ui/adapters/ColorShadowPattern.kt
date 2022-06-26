@@ -1,4 +1,4 @@
-package com.example.mydesignshow.ui.view
+package com.example.mydesignshow.ui.adapters
 
 import android.animation.ValueAnimator
 import android.graphics.Color
@@ -12,22 +12,26 @@ import android.view.View
 import android.view.animation.Animation
 import androidx.annotation.ColorInt
 import androidx.core.graphics.ColorUtils
+import com.example.mydesignshow.R
 
-class ColorShadow {
-    fun createShadowDrawable(
+class ColorShadowPattern {
+
+    private fun createShadowDrawable(
         @ColorInt colors: IntArray,
         cornerRadius: Float,
         elevation: Float,
         centerX: Float,
-        centerY: Float
+        centerY: Float,
+        shadowColor: Int
     ): ShapeDrawable {
         val shadowDrawable = ShapeDrawable()
+        val outerRadius = FloatArray(8) { cornerRadius }
 
         shadowDrawable.paint.setShadowLayer(
             elevation, // размер тени
             0f, // смещение тени по оси Х
             0f, // по У
-            Color.BLACK // цвет тени
+            shadowColor // цвет тени
         )
 
         /**
@@ -48,7 +52,6 @@ class ColorShadow {
             null
         )
 
-        val outerRadius = FloatArray(8) { cornerRadius }
         shadowDrawable.shape = RoundRectShape(outerRadius, null, null)
 
         return shadowDrawable
@@ -58,7 +61,7 @@ class ColorShadow {
      * Создание цветного drawable с закругленными углами
      * Это будет основной цвет нашего контейнера
      */
-    fun createColorDrawable(
+    private fun createColorDrawable(
         @ColorInt backgroundColor: Int,
         cornerRadius: Float
     ) = GradientDrawable().apply {
@@ -69,7 +72,7 @@ class ColorShadow {
     /**
      * Устанавливаем бэкграунд с тенью на вьюху, учитывая padding
      */
-    fun View.setColorShadowBackground(
+    private fun View.setColorShadowBackground(
         shadowDrawable: ShapeDrawable,
         colorDrawable: Drawable,
         padding: Int
@@ -79,13 +82,12 @@ class ColorShadow {
         drawable.setLayerInset(1, padding, padding, padding, padding)
         setPadding(padding, padding, padding, padding)
         background = drawable
-
     }
 
     /**
      * Анимация drawable-градиента
      */
-    fun animateShadow(
+    private fun animateShadow(
         shapeDrawable: ShapeDrawable,
         @ColorInt startColors: IntArray,
         @ColorInt endColors: IntArray,
@@ -135,4 +137,77 @@ class ColorShadow {
             start()
         }
     }
+
+
+    fun setAnimatedShadow(
+        view: View,
+        startColors: IntArray,
+        endColors: IntArray,
+        cornerRadius: Float,
+        padding: Int,
+        backgroundColor: Int,
+        shadowColor: Int,
+        duration: Long
+    ) {
+        val centerX = view.width.toFloat() / 2 - padding
+        val centerY = view.height.toFloat() / 2 - padding
+
+        val shadowDrawable = createShadowDrawable(
+            colors = startColors,
+            cornerRadius = cornerRadius,
+            elevation = padding.toFloat(),
+            centerX = centerX,
+            centerY = centerY,
+            shadowColor = shadowColor
+        )
+
+        val colorDrawable = createColorDrawable(
+            backgroundColor = backgroundColor,
+            cornerRadius = cornerRadius
+        )
+
+        view.setColorShadowBackground(
+            shadowDrawable = shadowDrawable,
+            colorDrawable = colorDrawable,
+            padding = padding
+        )
+
+        animateShadow(
+            shapeDrawable = shadowDrawable,
+            startColors = startColors,
+            endColors = endColors,
+            duration = duration,
+            centerX = centerX,
+            centerY = centerY
+        )
+    }
+}
+
+fun View.setAnimatedShadow(
+    startColors: IntArray = intArrayOf(
+        Color.WHITE,
+        Color.GREEN,
+        Color.WHITE
+    ),
+    endColors: IntArray= intArrayOf(
+        Color.GREEN,
+        Color.WHITE,
+        Color.GREEN
+    ),
+    cornerRadius: Float = 20f.dp,
+    padding: Int = 30.dp,
+    backgroundColor: Int = R.drawable.background_gradient,
+    shadowColor: Int = Color.BLACK,
+    duration: Long = 2000
+) {
+    ColorShadowPattern().setAnimatedShadow(
+        this,
+        startColors,
+        endColors,
+        cornerRadius,
+        padding,
+        backgroundColor,
+        shadowColor,
+        duration
+    )
 }

@@ -14,18 +14,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/second_bar"
-        app:subtitle="Today, 1 June"
         app:subtitleTextAppearance="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
         app:subtitleTextColor="@color/gray"
-        app:title="Classes"
-        app:titleTextColor="@color/white" />
+        app:title="@string/classes"
+        app:titleTextColor="@color/white"
+        tools:subtitle="Today, 1 June" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/day_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="10dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_day_classes" />
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 </LinearLayout>
