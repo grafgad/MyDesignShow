@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="3dp"
+        android:layout_height="0dp"
+        android:background="@color/green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/day_point2"
+        app:layout_constraintStart_toStartOf="@id/day_point2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/day_firs_point2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_baseline_circle_24"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/day_point2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_circle_24"
+        app:layout_constraintBottom_toBottomOf="@id/day_firs_point2"
+        app:layout_constraintEnd_toEndOf="@id/day_firs_point2"
+        app:layout_constraintStart_toStartOf="@id/day_firs_point2"
+        app:layout_constraintTop_toTopOf="@id/day_firs_point2" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/day_time2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/day_point2"
+        app:layout_constraintStart_toEndOf="@id/day_point2"
+        app:layout_constraintTop_toTopOf="@id/day_point2"
+        tools:text="8:00 - 8:45" />
+
+    <ImageView
+        android:id="@+id/day_class_card_background2"
+        android:layout_width="370dp"
+        android:layout_height="270dp"
+        app:layout_constraintBottom_toBottomOf="@+id/day_class_card2"
+        app:layout_constraintEnd_toEndOf="@+id/day_class_card2"
+        app:layout_constraintStart_toStartOf="@+id/day_class_card2"
+        app:layout_constraintTop_toTopOf="@+id/day_class_card2"
+        android:contentDescription="@string/background" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/day_class_card2"
+        android:layout_width="320dp"
+        android:layout_height="220dp"
+        android:backgroundTint="@android:color/transparent"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/line2"
+        app:layout_constraintTop_toBottomOf="@id/day_point2"
+        app:cardElevation="0dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical|top"
+            android:layout_margin="20dp"
+            android:backgroundTint="#4C4C4C"
+            app:cardCornerRadius="30dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/day_class_image2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_history" />
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/day_class_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/history"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/day_teacher2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="55dp"
+            android:text="@string/teacher"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/day_class_card_description2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/white"
+            tools:text="Intensive preparation for The Junior World Championship in Los Angeles"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:paddingStart="30dp"
+            android:paddingBottom="20dp"
+            android:src="@drawable/ic_baseline_tag_faces_24"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:paddingStart="47dp"
+            android:paddingBottom="20dp"
+            android:src="@drawable/ic_baseline_face_24"
+            tools:ignore="RtlSymmetry" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

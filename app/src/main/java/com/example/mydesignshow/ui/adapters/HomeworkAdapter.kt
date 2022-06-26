@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.widget.TextViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.mydesignshow.App
@@ -25,18 +26,20 @@ class HomeworkAdapter : RecyclerView.Adapter<HomeworkAdapter.HomeworkViewHolder>
     private var homeworkList = emptyList<MyHomework>()
 
     class HomeworkViewHolder(itemVIew: View) : RecyclerView.ViewHolder(itemVIew) {
-        private val context: Context = App.instance
+        private val context: Context = itemVIew.context
+        private val resources = context.resources
 
         private val name = itemVIew.findViewById<TextView>(R.id.homework_name)
         private val timer = itemVIew.findViewById<TextView>(R.id.homework_timer)
         private val description = itemVIew.findViewById<TextView>(R.id.homework_description)
         private val image = itemVIew.findViewById<ImageView>(R.id.homework_image)
         fun onBind(myHomework: MyHomework) {
+
+            timer.text = resources.getQuantityString(R.plurals.days_left, myHomework.daysLeft,myHomework.daysLeft)
             name.text = myHomework.name
-            timer.text = "${myHomework.daysLeft} days left"
             if (myHomework.daysLeft <= 3) {
                 timer.setTextColor(AppCompatResources.getColorStateList(context, R.color.red))
-                timer.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#FF0000")))
+                TextViewCompat.setCompoundDrawableTintList(timer, ColorStateList.valueOf(Color.parseColor("#FF0000")))
             }
             description.text = myHomework.description
             image.load(R.drawable.ic_literature)

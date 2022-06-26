@@ -9,7 +9,8 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/container"
-        android:layout_margin="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical" />
@@ -19,8 +20,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
+        android:elevation="4dp"
+        app:itemIconTint="@color/green"
+        app:itemTextColor="@color/green"
         android:background="@drawable/bottom_navigation_background"
         app:labelVisibilityMode="selected"
         app:menu="@menu/bottom_navigation" />
